@@ -59,7 +59,7 @@ class ViewController3: UIViewController {
     func slopeDerived(pred: Double, target: Double)->Double{
         return (pred-target)*2
     }
-    
+    //  Guess - (learningRate*((Guess-target)*2))
     func findOptimalWeight(pred: Double, learningRate: Double) -> Double{
         let slope = slopeDerived(pred: pred, target: target)
         return pred - (learningRate*slope)
