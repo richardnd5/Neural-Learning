@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Basic Perceptron-->
+        <!--Perceptron-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController1" customModule="neural2" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,7 +141,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Basic Perceptron" id="Q36-Z0-R2h"/>
+                    <tabBarItem key="tabBarItem" title="Perceptron" id="Q36-Z0-R2h"/>
                     <connections>
                         <outlet property="PredictionLabel" destination="Lge-tg-5rG" id="DiF-Zz-vAF"/>
                         <outlet property="biasLabel" destination="tKW-vc-bEW" id="DFA-zf-q5U"/>
@@ -250,7 +250,7 @@
             </objects>
             <point key="canvasLocation" x="829.60000000000002" y="207.34632683658174"/>
         </scene>
-        <!--Working Neural Network-->
+        <!--Neural Network-->
         <scene sceneID="s0i-ua-Fie">
             <objects>
                 <viewController id="AJj-Nn-3Ni" customClass="ViewController4" customModule="neural2" customModuleProvider="target" sceneMemberID="viewController">
@@ -332,7 +332,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VYq-Q7-6QZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Working Neural Network" id="3xY-jg-z03"/>
+                    <tabBarItem key="tabBarItem" title="Neural Network" id="3xY-jg-z03"/>
                     <connections>
                         <outlet property="dataLabel" destination="AYe-Ud-HVJ" id="Si5-ui-r8w"/>
                         <outlet property="m1Label" destination="L6G-aC-eT8" id="6yv-QP-cNC"/>
@@ -359,13 +359,15 @@
                         <segue destination="2Td-Ni-nrn" kind="relationship" relationship="viewControllers" id="u9b-rN-QTK"/>
                         <segue destination="sOZ-4o-RJ0" kind="relationship" relationship="viewControllers" id="72M-zi-xDZ"/>
                         <segue destination="AJj-Nn-3Ni" kind="relationship" relationship="viewControllers" id="6sg-o0-zLH"/>
+                        <segue destination="5ZX-B3-uiJ" kind="relationship" relationship="viewControllers" id="WAc-yp-K7J"/>
+                        <segue destination="H2D-LA-geR" kind="relationship" relationship="viewControllers" id="bWG-9k-e7h"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTt-KB-o3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-34" y="875"/>
         </scene>
-        <!--Adjust Weights-->
+        <!--Weights-->
         <scene sceneID="U47-bv-oRl">
             <objects>
                 <viewController id="sOZ-4o-RJ0" customClass="ViewController3" customModule="neural2" customModuleProvider="target" sceneMemberID="viewController">
@@ -448,7 +450,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kWD-uK-3DF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Adjust Weights" id="f0g-aP-qDG"/>
+                    <tabBarItem key="tabBarItem" title="Weights" id="f0g-aP-qDG"/>
                     <connections>
                         <outlet property="adjustedNumberLabel" destination="3mI-xO-Wz6" id="Wja-ob-4kX"/>
                         <outlet property="learningRateLabel" destination="bpQ-kF-0Ar" id="8ze-ra-I6i"/>
@@ -458,6 +460,164 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXE-dS-RGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1093.5999999999999" y="995.35232383808102"/>
+        </scene>
+        <!--Hue-->
+        <scene sceneID="tz0-47-PC0">
+            <objects>
+                <viewController id="5ZX-B3-uiJ" customClass="ViewController5" customModule="neural2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VIu-ip-mR1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="0.91000000000000003" translatesAutoresizingMaskIntoConstraints="NO" id="sXy-s2-jKm">
+                                <rect key="frame" x="14" y="530" width="347" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="hueSlider:" destination="5ZX-B3-uiJ" eventType="valueChanged" id="hxi-eg-fL7"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slide To Change Hue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1w-pd-Aib">
+                                <rect key="frame" x="107" y="453" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awn-LN-SRg">
+                                <rect key="frame" x="67" y="209" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaB-SD-hfT">
+                                <rect key="frame" x="16" y="490" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="JfY-m9-ihW"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Hue" id="mlE-gZ-FEy"/>
+                    <connections>
+                        <outlet property="colorBox" destination="awn-LN-SRg" id="3gi-wC-Oow"/>
+                        <outlet property="hueLabel" destination="qaB-SD-hfT" id="4Bk-7u-CRF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WcE-1B-PkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="429.60000000000002" y="1773.4632683658172"/>
+        </scene>
+        <!--Color?-->
+        <scene sceneID="wnR-so-kKf">
+            <objects>
+                <viewController id="H2D-LA-geR" customClass="ViewController6" customModule="neural2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KVG-NY-XeN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03i-p0-VUY">
+                                <rect key="frame" x="16" y="334" width="107" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Red">
+                                    <color key="titleColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="redButton:" destination="H2D-LA-geR" eventType="touchUpInside" id="dRz-Fy-jAj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4C-bd-7Ux">
+                                <rect key="frame" x="131" y="334" width="107" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Orange">
+                                    <color key="titleColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="orangeButton:" destination="H2D-LA-geR" eventType="touchUpInside" id="1mK-j2-uNe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7B-jV-vBU">
+                                <rect key="frame" x="246" y="334" width="107" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Yellow">
+                                    <color key="titleColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="yellowButton:" destination="H2D-LA-geR" eventType="touchUpInside" id="DDT-XC-eeM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJj-jh-dOX">
+                                <rect key="frame" x="16" y="425" width="107" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Green">
+                                    <color key="titleColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="greenButton:" destination="H2D-LA-geR" eventType="touchUpInside" id="M1M-by-kO2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-hf-0x9">
+                                <rect key="frame" x="131" y="425" width="107" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Blue">
+                                    <color key="titleColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="blueButton:" destination="H2D-LA-geR" eventType="touchUpInside" id="xoc-Ey-un6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTk-pF-F3p">
+                                <rect key="frame" x="131" y="516" width="107" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Pink">
+                                    <color key="titleColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pinkButton:" destination="H2D-LA-geR" eventType="touchUpInside" id="4kN-BC-0Md"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hzp-bs-2qu">
+                                <rect key="frame" x="16" y="109" width="337" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What color is this?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RB-Z4-3Us">
+                                <rect key="frame" x="19" y="44" width="337" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWi-JD-3aI">
+                                <rect key="frame" x="246" y="425" width="107" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Purple">
+                                    <color key="titleColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="purpleButton:" destination="H2D-LA-geR" eventType="touchUpInside" id="BTo-PT-Ggy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RyS-kE-Kdb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Color?" id="wSf-wY-UEf"/>
+                    <connections>
+                        <outlet property="colorView" destination="Hzp-bs-2qu" id="HRP-Cw-Pu3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xPU-qQ-dNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="1713.1934032983509"/>
         </scene>
     </scenes>
 </document>
