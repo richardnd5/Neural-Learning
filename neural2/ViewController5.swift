@@ -20,10 +20,7 @@ class ViewController5: UIViewController {
         colorBox.backgroundColor = UIColor(hue: CGFloat(hue), saturation: 1.0, brightness: 1.0, alpha: 1.0)
     }
     @IBOutlet weak var colorBox: UIView!
-    //unknown type (data we want to find)
-    var dataU = [4.5,  1.0, 2.0];
-    var all_points = [dataB1, dataB2, dataB3, dataB4, dataR1, dataR2, dataR3, dataR4];
-    
+
     override func viewDidLoad() {
 
     }
@@ -33,48 +30,7 @@ class ViewController5: UIViewController {
         return sigmoid(x: m1 * w1 + m2 * w2 + b)
     }
     
-    func train() {
-        
-        // Need to start off with random weights
-        w1 = randomDouble(min: 0.0, max: 1.0)*0.2-0.1
-        w2 = randomDouble(min: 0.0, max: 1.0)*0.2-0.1
-        b = randomDouble(min: 0.0, max: 1.0)*0.2-0.1
-        let learningRate = 0.2
-        
-        for _ in 0..<50000 {
-            
-            // pick a random point from the database array
-            let randomIndex = Int(randomDouble(min: 0, max: 1.0)*Double(all_points.count))
-            let point = all_points[randomIndex]
-            let m1 = point[0]
-            let m2 = point[1]
-            let target = point[2]
-            let dBias = 1.0
-            
-            // feed forward part of the network.
-            // data*weight+bias
-            let weightedSum = w1 * point[0] + w2 * point[1] + b
-            let pred = sigmoid(x: weightedSum)
-            
-            // now we find the slope of the cost with respect to each parameter (w1, w2, b)
-            // bring derivative through square function
-            let error = 2 * (pred - target)
-            
-            // bring derivative through sigmoid
-            // derivative of sigmoid can be written using more sigmoids! d/dz sigmoid(z) = sigmoid(z)*(1-sigmoid(z))
-            let dWeightedSum = sigmoid(x: weightedSum) * (1-sigmoid(x: weightedSum))
-            
-            // partial derivatives using the chain rule. This is the part I need help understanding.
-            let dcost_dw1 = error * dWeightedSum * m1
-            let dcost_dw2 = error * dWeightedSum * m2
-            let dcost_db =  error * dWeightedSum * dBias
-            
-            // now we update our parameters.
-            w1 -= learningRate * dcost_dw1
-            w2 -= learningRate * dcost_dw2
-            b -= learningRate * dcost_db
-        }
-    }
+
     
     // This is the sigmoid function. Exp is the exponential function.
     func sigmoid(x: Double) -> Double{
